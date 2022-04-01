@@ -1,9 +1,11 @@
 package crud.spring.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import crud.spring.exception.ResourceNotFoundException;
 import crud.spring.model.Employee;
 import crud.spring.repository.EmployeeRepository;
 import crud.spring.service.EmployeeService;
@@ -26,6 +28,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List<Employee> getAllEmployees() {
 		return employeeRepository.findAll();
+	}
+	
+	@Override
+	public Employee getEmployeeById(long id) {
+		Optional<Employee> employee = employeeRepository.findById(id);
+		if(employee.isPresent()) {
+			return employee.get();
+		} else {
+			throw new ResourceNotFoundException("Employee", "Id", id);
+		}
+		
 	}
 
 }

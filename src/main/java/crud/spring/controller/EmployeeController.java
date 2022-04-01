@@ -35,5 +35,8 @@ public class EmployeeController {
 	public List<Employee> getAllEmployees(){
 		return employeeService.getAllEmployees();
 	}
+	
+	//build get employee by id REST API
+	
 
 }
