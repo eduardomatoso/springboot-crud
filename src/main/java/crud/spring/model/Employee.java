@@ -66,24 +66,9 @@ public class Employee {
 		this.email = email;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(email, firstName, id, lastName);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Employee other = (Employee) obj;
-		return Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName) && id == other.id
-				&& Objects.equals(lastName, other.lastName);
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
-	
-
 }
