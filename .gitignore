@@ -1,6 +1,6 @@
 #files
-*.status
-*.target/
+status*
+target/
 
 # Compiled class file
 *.class
