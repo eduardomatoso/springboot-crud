@@ -1,5 +1,7 @@
+#files
 *.status
-*target/
+*.target/
+
 # Compiled class file
 *.class
 
